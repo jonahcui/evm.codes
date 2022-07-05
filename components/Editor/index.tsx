@@ -480,18 +480,20 @@ const Editor = ({ readOnly = false }: Props) => {
                   </div>
 
                   <div>
-                    {codeType === CodeType.Solidity && (
-                      <Button
-                        onClick={() => setIsExpanded(!isExpanded)}
-                        tooltip={'Please run your contract first.'}
-                        transparent
-                        padded={false}
-                      >
-                        <span className="inline-block mr-4 text-indigo-500">
-                          Advance Mode
-                        </span>
-                      </Button>
-                    )}
+                    <Fragment>
+                      {codeType === CodeType.Solidity && (
+                        <Button
+                          onClick={() => setIsExpanded(!isExpanded)}
+                          tooltip={'Please run your contract first.'}
+                          transparent
+                          padded={false}
+                        >
+                          <span className="inline-block mr-4 text-indigo-500">
+                            Advance Mode
+                          </span>
+                        </Button>
+                      )}
+                    </Fragment>
 
                     <Button
                       onClick={handleRun}
