@@ -19,13 +19,13 @@ For out of bound bytes, 0s will be copied.
 
 | Calldata |
 |---------:|
-| `0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF` |
+| `0xCCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFAABBCCDDEE` |
 
 | * | Input 1 | * | * | Input 2 |
 |--:|--------:|--:|--:|--------:|
 | `1` | `0` | * | `1` | `0` |
-| `2` | `0` | * | `2` | `31` |
-| `3` | `32` | * | `3` | `8` |
+| `2` | `30` | * | `2` | `0` |
+| `3` | `2` | * | `3` | `2` |
 
 | Memory before |
 |-------------:|
@@ -33,11 +33,11 @@ For out of bound bytes, 0s will be copied.
 
 | Memory after input 1 |
 |---------------------:|
-| `0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF` |
+| `0xDDEE000000000000000000000000000000000000000000000000000000000000` |
 
 | Memory after input 1 then 2 |
 |----------------------------:|
-| `0xFF00000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF` |
+| `0xCCFF000000000000000000000000000000000000000000000000000000000000` |
 
 [Reproduce in playground](/playground?unit=Wei&callData=0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF&codeType=Mnemonic&code='z1~32~0ywwz2~8~31y'~wPUSH1%20z%2F%2F%20Example%20y~0wCALLDATACOPYw%5Cn%01wyz~_).
 
